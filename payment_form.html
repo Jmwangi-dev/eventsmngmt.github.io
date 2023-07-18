@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment Form</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+		}
+
+		.container {
+			max-width: 400px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #ffffff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 8px;
+			font-weight: bold;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		select {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			margin-bottom: 15px;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			padding: 12px 20px;
+			cursor: pointer;
+			border-radius: 4px;
+			width: 100%;
+		}
+
+			input[type="submit"]:hover {
+				background-color: #45a049;
+			}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Payment Form</h1>
+		<form method="post" action="process_payment.php">
+			<label for="client_name">Name:</label>
+			<input type="text" id="client_name" name="client_name" required>
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+
+			<label for="mpesa_number">M-Pesa Number:</label>
+			<input type="tel" id="mpesa_number" name="mpesa_number" required>
+
+			<label for="payment_method">Payment Method:</label>
+			<select id="payment_method" name="payment_method" required>
+				<option value="till">Till Number</option>
+				<option value="till">paybill</option>
+				<option value="till">Bank Transfer</option>
+			</select>
+
+			<label for="payment_details">Payment Details:</label>
+			<input type="text" id="payment_details" name="payment_details" required>
+
+			<input type="submit" value="Make Payment">
+		</form>
+	</div>
+</body>
+</html>
